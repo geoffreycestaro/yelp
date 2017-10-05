@@ -1,2 +1,39 @@
-<h1>Home#results</h1>
-<p>Find me in app/views/home/results.html.erb</p>
+<h1>Here's where you can eat <%= params[:term] %> in <%= params[:address] %></h1>
+
+<div class="container">
+	<div class="row" >
+		<% @restaurants.each do |r| %>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-title">
+					<h3><%= r.name %></h4>
+					<div class="card-block">
+				        <h4><%= link_to "Visit Profile", r.url %></h4>
+				        <p>
+				          <%= r.address %>
+				          <%= r.address2 %>
+				          <%= r.address3 %>
+				          <%= r.city %>
+				        </p>
+				        <p>
+				          <%= r.phone %>
+				        </p>
+				        <p>
+				          <%= r.price %>
+				        </p>
+				        <p>
+				          <%  r.rating.times do %>
+				          	 <span class="glyphicon glyphicon-star"></span>
+				          <% end %>	 
+
+				        </p>
+				        <% end %>
+			    	</div>
+			    </div>
+        </div>
+      </div>
+  </div>
+</div>     
+
+
+<h3><%= link_to "Search Again...", root_path, class: 'btn btn-primary' %>

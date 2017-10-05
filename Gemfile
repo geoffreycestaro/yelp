@@ -35,6 +35,7 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'figaro'
 gem 'httparty'
+gem 'certified'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
